@@ -1,12 +1,12 @@
-package net.javaguides.sms;
+package com.gcu;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import net.javaguides.sms.entity.Student;
-import net.javaguides.sms.repository.StudentRepository;
+import com.gcu.entity.UserEntity;
+import com.gcu.repository.UserRepository;
 
 @SpringBootApplication
 public class StudentManagementSystemApplication implements CommandLineRunner{
@@ -16,7 +16,7 @@ public class StudentManagementSystemApplication implements CommandLineRunner{
 	}
 
 	@Autowired
-	private StudentRepository studentRepository;
+	private UserRepository studentRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {

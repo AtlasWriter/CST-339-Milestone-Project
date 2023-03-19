@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.javaguides</groupId>
-	<artifactId>student-management-system</artifactId>
+	<artifactId>Milestone_5Product.UserManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>student-management-system</name>
-	<description>Student Management System using Spring Boot and Thymeleaf</description>
+	<name>Milestone_5Product.UserManagement</name>
+	<description>Milestone_5Product.UserManagement</description>
 	<properties>
 		<java.version>16</java.version>
 	</properties>
@@ -54,6 +54,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    		<groupId>javax.validation</groupId>
+    		<artifactId>validation-api</artifactId>
+    		<version>2.0.1.Final</version>
+		</dependency>
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
 	</dependencies>
 
 	<build>
