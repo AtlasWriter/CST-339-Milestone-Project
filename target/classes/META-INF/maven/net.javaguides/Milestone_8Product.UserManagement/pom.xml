@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.javaguides</groupId>
-	<artifactId>Milestone_5Product.UserManagement</artifactId>
+	<artifactId>Milestone_8Product.UserManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Milestone_5Product.UserManagement</name>
-	<description>Milestone_5Product.UserManagement</description>
+	<name>Milestone_8Product.UserManagement</name>
+	<description>Milestone_8Product.UserManagement</description>
 	<properties>
 		<java.version>16</java.version>
 	</properties>
