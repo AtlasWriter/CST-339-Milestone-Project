@@ -3,7 +3,7 @@
 
 <h2>Final Design Report:</h2>
 
-<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daliy managment properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL databse is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot.</p>
+<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daliy managment properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL databse is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot. Please note that this app is written with spring boot security using bcrypt technology bean. If using my database, please see the Login Section below.</p>
 
 <p>Click the <strong>Test</strong> branch button to view source code.</p>
 
