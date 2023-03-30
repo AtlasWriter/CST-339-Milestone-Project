@@ -3,7 +3,7 @@
 
 <h2>Final Design Report:</h2>
 
-<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daliy managment properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL databse is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot. Please note that this app is written with spring boot security using bcrypt technology bean. If using my database, please see the Login Section below.</p>
+<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daliy managment properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL databse is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot.</p>
 
 <p>Click the <strong>Test</strong> branch button to view source code.</p>
 
@@ -11,29 +11,33 @@
 
 <p>&nbsp;<img alt="interactive connection" src="https://avatars1.githubusercontent.com/u/1492367?s=280&amp;v=4" style="float:left; width:35px" />&nbsp;Thymeleaf</p>
 
-<p>&nbsp;</p>
-
 <p><img alt="html cleaner" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" style="float:left; width:45px" />Boostrap</p>
-
-<p>&nbsp;</p>
 
 <p><img alt="Word to html" src="https://www.logolynx.com/images/logolynx/98/980c5fe716efb66c936eebe1937d5489.png" style="float:left; width:45px" /> Spring Boot</p>
 
-<p>&nbsp;</p>
-
 <p><img alt="replace text" src="https://th.bing.com/th/id/OIP.D87KXcDLtggvLLrmHnairwHaJG?pid=ImgDet&amp;rs=1" style="float:left; width:35px" />&nbsp; &nbsp;Spring Security</p>
-
-<p>&nbsp;</p>
 
 <p><img alt="gibberish" src="https://th.bing.com/th/id/OIP.Wd9moNdvBsgsNDMl6V1BegHaCn?pid=ImgDet&amp;rs=1" style="float:left; width:45px" />&nbsp;Rest API</p>
 
 <p><img alt="html table div" src="https://courses.javacodegeeks.com/wp-content/uploads/2021/03/hibernate-logo-1024x1024.jpg" style="float:left; width:45px" />&nbsp;Hibernate</p>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 
 <h2>Risks:</h2>
 
-<p>Thymeleaf version 3.0 is deprecated and moving to new version. SecurityFilterChain bean is new and still in beta stages</p>
+<p>Thymeleaf version 3.0 is deprecated and moving to new version. SecurityFilterChain bean is new and still in beta stages. Here is a snippit example of the new bean:</p>
+
+<pre>
+<code class="language-java">@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	http
+		.authorizeRequests(authorize -&gt; authorize
+			.anyRequest().authenticated()
+		)
+		.formLogin(withDefaults())
+		.httpBasic(withDefaults());
+	return http.build();
+}</code></pre>
 
 <h2>Initial Planning:</h2>
 
@@ -138,7 +142,17 @@
 </ul>
 
 <blockquote>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong><span style="color:#2ecc71">Remedy</span></strong>: Changed #Hibernate auto ddl in applicationsproperties from: spring.jpa.hibernate.ddl-auto=create-drop TO spring.jpa.hibernate.ddl-auto=update</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong><span style="color:#2ecc71">Remedy</span></strong>: Changed #Hibernate auto ddl in applicationsproperties from:</p>
+
+<pre>
+<code class="language-java">spring.jpa.hibernate.ddl-auto=create-drop</code></pre>
+
+<p>TO</p>
+
+<pre>
+<code class="language-java"> spring.jpa.hibernate.ddl-auto=update</code></pre>
+
+<p>&nbsp;</p>
 </blockquote>
 
 <ul>
@@ -160,9 +174,10 @@
 <blockquote>
 <p><span style="color:#2ecc71"><strong>Remedy: </strong></span>By default, the Authentication gets enabled for the Application. Also, content negotiation is used to determine if basic or formLogin should be used. There are some predefined properties:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 
-<p>**spring.security.user.nam</p>
+<pre>
+<code class="language-java">**spring.security.user.nam
 
-<p>&nbsp;**spring.security.user.password</p>
+**spring.security.user.password</code></pre>
 
 <p>&nbsp;If we don&#39;t configure the password using the predefined property spring.security.user.password and start the application, a default password is randomly generated and printed in the console log:&nbsp; Using default security password: c8be15de-4488-4490-9dc6-fab3f91435c6</p>
 </blockquote>
@@ -190,9 +205,10 @@
 <blockquote>
 <p><span style="color:#2ecc71"><strong>Remedy:</strong></span> There are many things that are wrong. I&#39;ll try to address it as much as possible. First, for future purposes, it&#39;s better to see the sql queries that gets executed by doing the following in the&nbsp;application.properties</p>
 
-<p>**spring.jpa.properties.hibernate.show_sql=true</p>
+<pre>
+<code class="language-java">**spring.jpa.properties.hibernate.show_sql=true
 
-<p>**spring.jpa.properties.hibernate.format_sql=true</p>
+**spring.jpa.properties.hibernate.format_sql=true</code></pre>
 
 <p>Found out after the query is printed I needed to change to spring.jpa.hibernate.ddl-auto=create to build new table</p>
 </blockquote>
