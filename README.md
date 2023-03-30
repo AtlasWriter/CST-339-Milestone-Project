@@ -37,8 +37,18 @@
 <li style="clear: both;">3. Add new pages using Spring MVC to support the new functionality.</li>
 </ol>
 <p>New Page: Update Product There is no reason to create another business service since I created an interface which contracted the ProductBussinesClass. Just letting you all know I designed this application using Data Access Object (DAO) and not a Repository design pattern. The backend of this week's milestone is complete with the SQL queries. Im only going to create a button for the deletion key. The update a product will be a separate html page.</p>
-<h2 style="color: #2e6c80;">Flowcharts:</h2>
-<p>I am an image: <img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG" alt="laughing" /></p>
+<h2 style="color: #2e6c80;">UML/Flowcharts:</h2>
+<p>Here we have the anticipation of the applications work flow:</p>
+<p><img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG" alt="Appflow" /></p>
+<p>Here is the Security flow for the application. This application requires authentication then authorization for roles.</p>
+<p><img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Security%20Flowchart.PNG" alt="securityflow" /></p>
+<p>Here is the Databse flow with MySQL.</p>
+<p><img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/database%20diagram.PNG" alt="databaseflow" /></p>
+<p>Here is the REST API flow with GET/UPDATE/DELETE/ADD. This API was used with POSTMAN and is recomended. We can also use this API to create a new user and call products in JSON.</p>
+<p><img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/REST%20API%20flow.PNG" alt="databaseflow" /></p>
+<h2 style="color: #2e6c80;">SiteMaps:</h2>
+<p>Here is the REST API flow with GET/UPDATE/DELETE/ADD. This API was used with POSTMAN and is recomended. We can also use this API to create a new user and call products in JSON.</p>
+<p><img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/REST%20API%20flow.PNG" alt="databaseflow" /></p>
 <table class="editorDemoTable">
 <thead>
 <tr>
