@@ -1,9 +1,9 @@
 <!-- #######  CRAFTY SOUTHERN HEIFER APPLICATION README! #########-->
-<h1>Crafty Southern Heifers Employee and Product Managment <span style="color:#2b2301">System.io</span></h1>
+<h1>Crafty Southern Heifers Employee and Product Managment <span style="color:#2b2301">System</span></h1>
 
 <h2>Final Design Report:</h2>
 
-<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daliy managment properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL databse is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot.</p>
+<p>This application was written as an assignment from Grand Canyon University as a Student. This application handles daily management properties for two roles. Admin and User. Both have to be authenticated before resuming exploration of the applcation. Login details are listed below. MySQL database is also listed in the directory.&nbsp; Please be sure to add your own application propereties to your application.properties folder in Spring Boot.</p>
 
 <p>Click the <strong>Test</strong> branch button to view source code.</p>
 
