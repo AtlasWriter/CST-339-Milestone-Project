@@ -147,31 +147,24 @@
 	<li><strong><span style="color:#f39c12">Remove Defualt Security Password form Spring Security:</span></strong></li>
 </ul>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/generateddefaultpasswordexample.PNG"><img alt="defualtpasswordfromspringsecurity" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/generateddefaultpasswordexample.PNG" /></a></p>
+<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/generateddefaultpasswordexample.PNG" /></p>
+
+<p>&nbsp;</p>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#2ecc71"><strong>&nbsp;Remedy: </strong></span>By default, the Authentication gets enabled for the Application. Also, content negotiation is used to determine if basic or formLogin should be used. There are some predefined properties:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**spring.security.user.name</p>
 
-<p>**spring.security.user.password</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**spring.security.user.password</p>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If we don&#39;t configure the password using the predefined property spring.security.user.password and start the application, a default password is randomly generated and printed in the console log:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Using default security password: c8be15de-4488-4490-9dc6-fab3f91435c6</p>
 
 <ul>
 	<li><span style="color:#e74c3c"><strong>JPA ManytoMany Relationship &quot;JoinColumn cannot be resolved to a type&quot; error</strong></span></li>
-</ul>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#2ecc71"><strong>Remedy</strong></span>: import javax.persistence.JoinColumn; Sometime eclipse doesn&#39;t show the link to import it in context.menu, but it&#39;s there. Hope it will help someone.</p>
-
-<ul>
+	<li><span style="color:#2ecc71"><strong>Remedy</strong></span>: import javax.persistence.JoinColumn; Sometime eclipse doesn&#39;t show the link to import it in context.menu, but it&#39;s there. Hope it will help someone.</li>
 	<li><span style="color:#e74c3c"><strong>@Query Problem: Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Users is not mapped</strong></span></li>
+	<li><span style="color:#2ecc71"><strong>Remedy:</strong></span> To be more precise , you should use the entity name configured in @Entity to refer to the &quot;table&quot; , which default to unqualified name of the mapped java class if you do not set it explicitly.&nbsp;(P.S. It is @javax.persistence.Entity but not @org.hibernate.annotations.Entity)&nbsp;</li>
+	<li><span style="color:#e74c3c"><strong>Spring boot Cannot add foreign key constrain</strong></span>&nbsp;</li>
+	<li><span style="color:#2ecc71"><strong>Remedy:</strong></span> There are many things that are wrong. I&#39;ll try to address it as much as possible. First, for future purposes, it&#39;s better to see the sql queries that gets executed by doing the following in the&nbsp;application.properties:</li>
 </ul>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#2ecc71"><strong> Remedy:</strong></span> To be more precise , you should use the entity name configured in @Entity to refer to the &quot;table&quot; , which default to unqualified name of the mapped java class if you do not set it&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; explicitly.&nbsp;(P.S. It is @javax.persistence.Entity but not @org.hibernate.annotations.Entity)&nbsp;</p>
-
-<ul>
-	<li><span style="color:#e74c3c"><strong>Spring boot Cannot add foreign key constraint</strong></span></li>
-</ul>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#2ecc71"><strong>Remedy:</strong></span> There are many things that are wrong. I&#39;ll try to address it as much as possible. First, for future purposes, it&#39;s better to see the sql queries that gets executed by doing the following in the&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; application.properties:</p>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **spring.jpa.properties.hibernate.show_sql=true</p>
 
