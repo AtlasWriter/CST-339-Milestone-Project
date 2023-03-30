@@ -28,8 +28,7 @@
 </ol>
 <p>Create Role JPA entities and establish a many-to-many mapping between them one user can have multiple roles and one role can be assigned to multiple users. The @ManyToMany JPA annotation is used to link the source entity with the target entity. A many-to-many association always uses an intermediate join table to store the association that joins two entities. The join table is defined using the @JoinTable JPA annotation. Create the form for add a product. Create the Thymeleaf action/object. Touch up a few grids on html. Will be implementing:</p>
 <ol style="list-style: none; font-size: 14px; line-height: 32px; font-weight: bold;">
-<li style="clear: both;">1. Add the update and delete product options on the products page.
-</li>
+<li style="clear: both;">1. Add the update and delete product options on the products page.</li>
 </ol>
 <ol style="list-style: none; font-size: 14px; line-height: 32px; font-weight: bold;">
 <li style="clear: both;">2. Create a Test Plan and Test Cases. Execute all Test Cases.</li>
@@ -38,10 +37,8 @@
 <li style="clear: both;">3. Add new pages using Spring MVC to support the new functionality.</li>
 </ol>
 <p>New Page: Update Product There is no reason to create another business service since I created an interface which contracted the ProductBussinesClass. Just letting you all know I designed this application using Data Access Object (DAO) and not a Repository design pattern. The backend of this week's milestone is complete with the SQL queries. Im only going to create a button for the deletion key. The update a product will be a separate html page.</p>
-
-<p>
-  https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG
-  </p>
+<h2 style="color: #2e6c80;">Flowcharts:</h2>
+<p>I am an image: <img src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG" alt="laughing" /></p>
 <table class="editorDemoTable">
 <thead>
 <tr>
