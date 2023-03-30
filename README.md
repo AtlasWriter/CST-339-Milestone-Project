@@ -1,5 +1,5 @@
 <!-- #######  CRAFTY SOUTHERN HEIFER APPLICATION README! #########-->
-<h1>Crafty Southern Heifers Employee and Product Managment <span style="color:#2b2301">System</span></h1>
+<h1>Crafty Southern Heifers Employee and Product Management <span style="color:#2b2301">System</span></h1>
 
 <h2>Final Design Report:</h2>
 
