@@ -38,6 +38,10 @@
 <li style="clear: both;">3. Add new pages using Spring MVC to support the new functionality.</li>
 </ol>
 <p>New Page: Update Product There is no reason to create another business service since I created an interface which contracted the ProductBussinesClass. Just letting you all know I designed this application using Data Access Object (DAO) and not a Repository design pattern. The backend of this week's milestone is complete with the SQL queries. Im only going to create a button for the deletion key. The update a product will be a separate html page.</p>
+
+<p>
+  https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG
+  </p>
 <table class="editorDemoTable">
 <thead>
 <tr>
