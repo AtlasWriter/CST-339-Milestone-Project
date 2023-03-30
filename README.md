@@ -109,6 +109,12 @@ SecurityFilterChain web(HttpSecurity http) throws Exception {
 
 <p>&nbsp;</p>
 
+<p>Here is a view of the UML class.</p>
+
+<p style="text-align:center"><img alt="uml FLOW" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/UML%20CLASS.jpg" /></p>
+
+<p>&nbsp;</p>
+
 <h2>Login Information:</h2>
 
 <p style="text-align:center">&nbsp;</p>
