@@ -135,13 +135,17 @@
 	<li><span style="color:#e74c3c"><strong>java.sql.SQLSyntaxErrorException:</strong></span> Can&#39;t DROP &#39;FKs4q7p6d4h57198j5v0su068jq&#39;; check that column/key exists</li>
 </ul>
 
+<blockquote>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong><span style="color:#2ecc71">Remedy</span></strong>: Changed #Hibernate auto ddl in applicationsproperties from: spring.jpa.hibernate.ddl-auto=create-drop TO spring.jpa.hibernate.ddl-auto=update</p>
+</blockquote>
 
 <ul>
 	<li><span style="color:#e74c3c"><strong>java.lang.IllegalArgumentException:</strong></span> Not a managed type: class com.gcu.entity.User</li>
 </ul>
 
+<blockquote>
 <p><strong><span style="color:#2ecc71">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Remedy:</span></strong> Refactored packages.</p>
+</blockquote>
 
 <ul>
 	<li><strong><span style="color:#f39c12">Remove Defualt Security Password form Spring Security:</span></strong></li>
@@ -163,18 +167,33 @@
 
 <ul>
 	<li><span style="color:#e74c3c"><strong>JPA ManytoMany Relationship &quot;JoinColumn cannot be resolved to a type&quot; error</strong></span></li>
-	<li><span style="color:#2ecc71"><strong>Remedy</strong></span>: import javax.persistence.JoinColumn; Sometime eclipse doesn&#39;t show the link to import it in context.menu, but it&#39;s there. Hope it will help someone.</li>
-	<li><span style="color:#e74c3c"><strong>@Query Problem: Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Users is not mapped</strong></span></li>
-	<li><span style="color:#2ecc71"><strong>Remedy:</strong></span> To be more precise , you should use the entity name configured in @Entity to refer to the &quot;table&quot; , which default to unqualified name of the mapped java class if you do not set it explicitly.&nbsp;(P.S. It is @javax.persistence.Entity but not @org.hibernate.annotations.Entity)&nbsp;</li>
-	<li><span style="color:#e74c3c"><strong>Spring boot Cannot add foreign key constrain</strong></span>&nbsp;</li>
-	<li><span style="color:#2ecc71"><strong>Remedy:</strong></span> There are many things that are wrong. I&#39;ll try to address it as much as possible. First, for future purposes, it&#39;s better to see the sql queries that gets executed by doing the following in the&nbsp;application.properties:</li>
 </ul>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **spring.jpa.properties.hibernate.show_sql=true</p>
+<blockquote>
+<p><span style="color:#2ecc71"><strong>Remedy</strong></span>: import javax.persistence.JoinColumn; Sometime eclipse doesn&#39;t show the link to import it in context.menu, but it&#39;s there. Hope it will help someone.</p>
+</blockquote>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **spring.jpa.properties.hibernate.format_sql=true</p>
+<ul>
+	<li><span style="color:#e74c3c"><strong>@Query Problem: Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Users is not mapped</strong></span></li>
+</ul>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Found out after the query is printed I needed to change to spring.jpa.hibernate.ddl-auto=create to build new table</p>
+<blockquote>
+<p><span style="color:#2ecc71"><strong>Remedy:</strong></span> To be more precise , you should use the entity name configured in @Entity to refer to the &quot;table&quot; , which default to unqualified name of the mapped java class if you do not set it explicitly.&nbsp;(P.S. It is @javax.persistence.Entity but not @org.hibernate.annotations.Entity)&nbsp;</p>
+</blockquote>
+
+<ul>
+	<li><span style="color:#e74c3c"><strong>Spring boot Cannot add foreign key constrain</strong></span>&nbsp;</li>
+</ul>
+
+<blockquote>
+<p><span style="color:#2ecc71"><strong>Remedy:</strong></span> There are many things that are wrong. I&#39;ll try to address it as much as possible. First, for future purposes, it&#39;s better to see the sql queries that gets executed by doing the following in the&nbsp;application.properties</p>
+
+<p>**spring.jpa.properties.hibernate.show_sql=true</p>
+
+<p>**spring.jpa.properties.hibernate.format_sql=true</p>
+
+<p>Found out after the query is printed I needed to change to spring.jpa.hibernate.ddl-auto=create to build new table</p>
+</blockquote>
 
 <p>&nbsp;</p>
 
