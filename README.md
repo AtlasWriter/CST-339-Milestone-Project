@@ -151,7 +151,7 @@
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#2ecc71"><strong>&nbsp;Remedy: </strong></span>By default, the Authentication gets enabled for the Application. Also, content negotiation is used to determine if basic or formLogin should be used. There are some predefined properties:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**spring.security.user.name</p>
 
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**spring.security.user.password</p>
+<p>**spring.security.user.password</p>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If we don&#39;t configure the password using the predefined property spring.security.user.password and start the application, a default password is randomly generated and printed in the console log:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Using default security password: c8be15de-4488-4490-9dc6-fab3f91435c6</p>
 
