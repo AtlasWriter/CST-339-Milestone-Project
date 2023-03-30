@@ -71,37 +71,39 @@
 
 <p>Here we have the anticipation of the applications work flow:</p>
 
-<p><img alt="Appflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG" /></p>
+<p style="text-align:center"><img alt="Appflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Site%20Flow%20Chart.PNG" /></p>
 
 <p>Here is the Security flow for the application. This application requires authentication then authorization for roles.</p>
 
-<p><img alt="securityflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Security%20Flowchart.PNG" /></p>
+<p style="text-align:center"><img alt="securityflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/CSH%20Security%20Flowchart.PNG" /></p>
 
 <p>Here is the Databse flow with MySQL.</p>
 
-<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/database%20diagram.PNG" /></p>
+<p style="text-align:center"><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/database%20diagram.PNG" /></p>
 
 <p>Here is the REST API flow with GET/UPDATE/DELETE/ADD. This API was used with POSTMAN and is recomended. We can also use this API to create a new user and call products in JSON.</p>
 
-<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/REST%20API%20flow.PNG" /></p>
+<p style="text-align:center"><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/REST%20API%20flow.PNG" /></p>
 
 <h2>SiteMaps:</h2>
 
 <p>Here is a view of the Login Screen, The User and Admin view together, and ADMIN view only with the edit/add/update/delete option.</p>
 
-<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/loginpage.PNG" /></p>
+<p style="text-align:center"><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/loginpage.PNG" /></p>
 
 <p>Here is a view of the USER/ADMIN option.</p>
 
-<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/userrole.PNG" /></p>
+<p style="text-align:center"><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/userrole.PNG" /></p>
 
 <p>Here is a view of the ADMIN Only Screen.</p>
 
-<p><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/adminonly.PNG" /></p>
+<p style="text-align:center"><img alt="databaseflow" src="https://github.com/AtlasWriter/CST-339-Milestone-Project/blob/test/adminonly.PNG" /></p>
 
 <p>&nbsp;</p>
 
 <h2>Login Information:</h2>
+
+<p style="text-align:center">&nbsp;</p>
 
 <table border="1" cellpadding="1" cellspacing="1" style="width:500px">
 	<thead>
