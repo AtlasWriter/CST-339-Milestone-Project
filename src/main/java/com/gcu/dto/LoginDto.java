@@ -4,7 +4,7 @@ public class LoginDto {
 
 	private String password;
 	private String username;
-
+ 
 	/**
 	 * @return the password
 	 */

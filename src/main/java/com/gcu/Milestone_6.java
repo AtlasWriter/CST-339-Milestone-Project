@@ -16,7 +16,7 @@ public class Milestone_6 {
 	public static void main(String[] args) {
 		SpringApplication.run(Milestone_6.class, args);
 	}
-
+ 
 	@Autowired
 	private UserRepository studentRepository;
 

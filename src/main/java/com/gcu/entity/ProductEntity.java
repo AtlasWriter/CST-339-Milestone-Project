@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PRODUCTS")
 public class ProductEntity {
-
+ 
 	@Column(name = "DESCRIPTION")
 	private String description;
 

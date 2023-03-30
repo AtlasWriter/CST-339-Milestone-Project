@@ -18,7 +18,7 @@ import com.gcu.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-
+ 
 	private UserRepository userRepository;
 
 	@Autowired

@@ -21,7 +21,7 @@ import org.springframework.security.core.userdetails.User;
 public class LoginController {
 
 	private ProductService productService;
-
+ 
 	public LoginController(ProductService productService) {
 		super();
 		this.productService = productService;

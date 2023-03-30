@@ -6,7 +6,7 @@ import com.gcu.entity.ProductEntity;
 
 public interface ProductService {
 	void deleteProductById(Long id);
-
+ 
 	List<ProductEntity> getAllStudents();
 
 	ProductEntity getProductById(Long id);

@@ -16,7 +16,7 @@ import com.gcu.service.UserService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-
+ 
 	private ProductService productService;
 
 	private UserService userService;

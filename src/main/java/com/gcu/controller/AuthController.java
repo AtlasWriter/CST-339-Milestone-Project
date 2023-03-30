@@ -30,7 +30,7 @@ import com.gcu.service.ProductService;
 @RestController
 @RequestMapping("api/auth/")
 public class AuthController {
-
+ 
 	private AuthenticationManager authenticationManager;
 	private PasswordEncoder passwordEncoder;
 	private ProductService productService;

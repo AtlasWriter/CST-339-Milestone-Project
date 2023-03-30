@@ -12,7 +12,7 @@ import com.gcu.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
-
+ 
 	public UserServiceImpl(UserRepository studentRepository) {
 		super();
 		this.userRepository = studentRepository;

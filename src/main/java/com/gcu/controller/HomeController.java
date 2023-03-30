@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/welcome")
 public class HomeController {
-
+ 
 	@GetMapping("/welcome")
 	public String success(Model model) {
 		model.addAttribute("Signed in Succesfull", "Welcome");

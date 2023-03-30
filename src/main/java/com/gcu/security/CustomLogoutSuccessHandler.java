@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler {
-
+ 
 	@Override
 	public void onLogoutSuccess(final HttpServletRequest request, final HttpServletResponse response,
 			final Authentication authentication) throws IOException, ServletException {

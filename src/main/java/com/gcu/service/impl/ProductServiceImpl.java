@@ -12,7 +12,7 @@ import com.gcu.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
 	private ProductRepository productRepository;
-
+ 
 	public ProductServiceImpl(ProductRepository productRepository) {
 		super();
 		this.productRepository = productRepository;
