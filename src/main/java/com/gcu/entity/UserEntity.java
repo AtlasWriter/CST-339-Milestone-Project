@@ -14,100 +14,32 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "USERS")
 public class UserEntity {
-	
+
+	@Column(name = "EMAIL")
+	private String email;
+
+	@Column(name = "FIRST_NAME", nullable = false)
+	private String firstName;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "FIRST_NAME", nullable = false)
-	private String firstName;
-	
+
 	@Column(name = "LAST_NAME")
 	private String lastName;
-	
-	@Column(name = "USERNAME")
-	private String username;
-	
-	@Column(name = "EMAIL")
-	private String email;
-	
+
 	@Column(name = "PASSWORD")
 	private String password;
 
-
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-	inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
 	private List<Role> roles = new ArrayList<>();
 
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	/**
-	 * @return the firstName
-	 */
-	public String getFirstName() {
-		return firstName;
-	}
-
-
-	/**
-	 * @param firstName the firstName to set
-	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-
-	/**
-	 * @return the lastName
-	 */
-	public String getLastName() {
-		return lastName;
-	}
-
-
-	/**
-	 * @param lastName the lastName to set
-	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-
-
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
+	@Column(name = "USERNAME")
+	private String username;
 
 	/**
 	 * @return the email
@@ -116,14 +48,26 @@ public class UserEntity {
 		return email;
 	}
 
-
 	/**
-	 * @param email the email to set
+	 * @return the firstName
 	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public String getFirstName() {
+		return firstName;
 	}
 
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
 
 	/**
 	 * @return the password
@@ -132,6 +76,47 @@ public class UserEntity {
 		return password;
 	}
 
+	/**
+	 * @return the roles
+	 */
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	/**
 	 * @param password the password to set
@@ -140,23 +125,18 @@ public class UserEntity {
 		this.password = password;
 	}
 
-
-	/**
-	 * @return the roles
-	 */
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-
 	/**
 	 * @param roles the roles to set
 	 */
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
-	
-	
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 }
-	
-	

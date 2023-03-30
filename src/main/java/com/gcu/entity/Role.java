@@ -14,11 +14,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "ROLES")
 public class Role {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String name;
 
 	/**
@@ -29,17 +29,17 @@ public class Role {
 	}
 
 	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	/**
@@ -48,9 +48,5 @@ public class Role {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
-	
 
 }

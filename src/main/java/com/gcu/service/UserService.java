@@ -5,13 +5,13 @@ import java.util.List;
 import com.gcu.entity.UserEntity;
 
 public interface UserService {
-	List<UserEntity> getAllStudents();
-	
-	UserEntity saveUser(UserEntity userEntity);
-	
-	UserEntity getUserById(Long id);
-	
-	UserEntity updateUser(UserEntity userEntity);
-	
 	void deleteUserById(Long id);
+
+	List<UserEntity> getAllStudents();
+
+	UserEntity getUserById(Long id);
+
+	UserEntity saveUser(UserEntity userEntity);
+
+	UserEntity updateUser(UserEntity userEntity);
 }

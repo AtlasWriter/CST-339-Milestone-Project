@@ -31,12 +31,12 @@ import com.gcu.service.ProductService;
 @RequestMapping("api/auth/")
 public class AuthController {
 
-	private ProductService productService;
 	private AuthenticationManager authenticationManager;
-	private UserRepository userRepository;
-	private RoleRepository roleRepository;
 	private PasswordEncoder passwordEncoder;
-	
+	private ProductService productService;
+	private RoleRepository roleRepository;
+	private UserRepository userRepository;
+
 	@Autowired
 	public AuthController(ProductService productService, AuthenticationManager authenticationManager,
 			UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
@@ -48,70 +48,70 @@ public class AuthController {
 		this.passwordEncoder = passwordEncoder;
 	}
 
-	@PostMapping("login")
-	public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsername(),
-				loginDto.getPassword()));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		return new ResponseEntity<>("User Signed Success", HttpStatus.OK);
-		
+	@GetMapping("products/{id}")
+	public ProductEntity getProduct(@PathVariable Long id) {
+		return productService.getProductById(id);
+
 	}
-	
-	@PostMapping("register/user")
-	public ResponseEntity<String> registerUser(@RequestBody RegisterDto registerDto){
-		if(userRepository.existsByUsername(registerDto.getUsername())) {
-			return new ResponseEntity<>("Username is Taken", HttpStatus.BAD_REQUEST);
-			
-		}
-		UserEntity user = new UserEntity();
-		user.setUsername(registerDto.getUsername());
-		user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
-		user.setFirstName(registerDto.getFirstName());
-		user.setLastName(registerDto.getLastName());
-		user.setEmail(registerDto.getEmail());
-		
-		//Repository end points and setting roles of new registration creating a user 
-		//entity setting roles for new user with a new object
-		Role roles = roleRepository.findByName("USER").get();
-		user.setRoles(Collections.singletonList(roles));
-		
-		userRepository.save(user);
-		
-		return new ResponseEntity<>("User Registered success!", HttpStatus.OK);
-	}
-	
-	@PostMapping("register/admin")
-	public ResponseEntity<String> registerAdmin(@RequestBody RegisterDto registerDto){
-		if(userRepository.existsByUsername(registerDto.getUsername())) {
-			return new ResponseEntity<>("Username is Taken", HttpStatus.BAD_REQUEST);
-			
-		}
-		UserEntity user = new UserEntity();
-		user.setUsername(registerDto.getUsername());
-		user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
-		user.setFirstName(registerDto.getFirstName());
-		user.setLastName(registerDto.getLastName());
-		user.setEmail(registerDto.getEmail());
-		
-		//Repository end points and setting roles of new registration creating a user 
-		//entity setting roles for new user with a new object
-		Role roles = roleRepository.findByName("ADMIN").get();
-		user.setRoles(Collections.singletonList(roles));
-		
-		userRepository.save(user);
-		
-		return new ResponseEntity<>("User Registered success!", HttpStatus.OK);
-	}
+
 	@GetMapping("products")
 	public List<ProductEntity> getProducts() {
 		return productService.getAllStudents();
 	}
-	
-	@GetMapping("products/{id}")
-	public ProductEntity getProduct(@PathVariable Long id) {
-		return productService.getProductById(id);
-		
+
+	@PostMapping("login")
+	public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
+		Authentication authentication = authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		return new ResponseEntity<>("User Signed Success", HttpStatus.OK);
+
 	}
-	
-	
+
+	@PostMapping("register/admin")
+	public ResponseEntity<String> registerAdmin(@RequestBody RegisterDto registerDto) {
+		if (userRepository.existsByUsername(registerDto.getUsername())) {
+			return new ResponseEntity<>("Username is Taken", HttpStatus.BAD_REQUEST);
+
+		}
+		UserEntity user = new UserEntity();
+		user.setUsername(registerDto.getUsername());
+		user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
+		user.setFirstName(registerDto.getFirstName());
+		user.setLastName(registerDto.getLastName());
+		user.setEmail(registerDto.getEmail());
+
+		// Repository end points and setting roles of new registration creating a user
+		// entity setting roles for new user with a new object
+		Role roles = roleRepository.findByName("ADMIN").get();
+		user.setRoles(Collections.singletonList(roles));
+
+		userRepository.save(user);
+
+		return new ResponseEntity<>("User Registered success!", HttpStatus.OK);
+	}
+
+	@PostMapping("register/user")
+	public ResponseEntity<String> registerUser(@RequestBody RegisterDto registerDto) {
+		if (userRepository.existsByUsername(registerDto.getUsername())) {
+			return new ResponseEntity<>("Username is Taken", HttpStatus.BAD_REQUEST);
+
+		}
+		UserEntity user = new UserEntity();
+		user.setUsername(registerDto.getUsername());
+		user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
+		user.setFirstName(registerDto.getFirstName());
+		user.setLastName(registerDto.getLastName());
+		user.setEmail(registerDto.getEmail());
+
+		// Repository end points and setting roles of new registration creating a user
+		// entity setting roles for new user with a new object
+		Role roles = roleRepository.findByName("USER").get();
+		user.setRoles(Collections.singletonList(roles));
+
+		userRepository.save(user);
+
+		return new ResponseEntity<>("User Registered success!", HttpStatus.OK);
+	}
+
 }

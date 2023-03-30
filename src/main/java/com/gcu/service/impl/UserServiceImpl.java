@@ -9,13 +9,18 @@ import com.gcu.repository.UserRepository;
 import com.gcu.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
-	
+
 	public UserServiceImpl(UserRepository studentRepository) {
 		super();
 		this.userRepository = studentRepository;
+	}
+
+	@Override
+	public void deleteUserById(Long id) {
+		userRepository.deleteById(id);
 	}
 
 	@Override
@@ -24,23 +29,18 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserEntity saveUser(UserEntity userEntity) {
-		return userRepository.save(userEntity);
-	}
-
-	@Override
 	public UserEntity getUserById(Long id) {
 		return userRepository.findById(id).get();
 	}
 
 	@Override
-	public UserEntity updateUser(UserEntity userEntity) {
+	public UserEntity saveUser(UserEntity userEntity) {
 		return userRepository.save(userEntity);
 	}
 
 	@Override
-	public void deleteUserById(Long id) {
-		userRepository.deleteById(id);	
+	public UserEntity updateUser(UserEntity userEntity) {
+		return userRepository.save(userEntity);
 	}
 
 }

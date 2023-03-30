@@ -8,15 +8,19 @@ import com.gcu.entity.ProductEntity;
 import com.gcu.repository.ProductRepository;
 import com.gcu.service.ProductService;
 
-
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
 	private ProductRepository productRepository;
-	
+
 	public ProductServiceImpl(ProductRepository productRepository) {
 		super();
 		this.productRepository = productRepository;
+	}
+
+	@Override
+	public void deleteProductById(Long id) {
+		productRepository.deleteById(id);
 	}
 
 	@Override
@@ -25,23 +29,18 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public ProductEntity saveProduct(ProductEntity student) {
-		return productRepository.save(student);
-	}
-
-	@Override
 	public ProductEntity getProductById(Long id) {
 		return productRepository.findById(id).get();
 	}
 
 	@Override
-	public ProductEntity updateProduct(ProductEntity product) {
-		return productRepository.save(product);
+	public ProductEntity saveProduct(ProductEntity student) {
+		return productRepository.save(student);
 	}
 
 	@Override
-	public void deleteProductById(Long id) {
-		productRepository.deleteById(id);	
+	public ProductEntity updateProduct(ProductEntity product) {
+		return productRepository.save(product);
 	}
 
 }

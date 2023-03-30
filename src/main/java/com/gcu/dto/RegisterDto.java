@@ -1,32 +1,24 @@
 package com.gcu.dto;
 
-
 public class RegisterDto {
 
-	private Long id;
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private String username;
-	
 	private String email;
-	
+
+	private String firstName;
+
+	private Long id;
+
+	private String lastName;
+
 	private String password;
 
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
+	private String username;
 
 	/**
-	 * @param id the id to set
+	 * @return the email
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public String getEmail() {
+		return email;
 	}
 
 	/**
@@ -37,10 +29,10 @@ public class RegisterDto {
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @return the id
 	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public Long getId() {
+		return id;
 	}
 
 	/**
@@ -51,10 +43,10 @@ public class RegisterDto {
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @return the password
 	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public String getPassword() {
+		return password;
 	}
 
 	/**
@@ -65,20 +57,6 @@ public class RegisterDto {
 	}
 
 	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	/**
-	 * @return the email
-	 */
-	public String getEmail() {
-		return email;
-	}
-
-	/**
 	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
@@ -86,10 +64,24 @@ public class RegisterDto {
 	}
 
 	/**
-	 * @return the password
+	 * @param firstName the firstName to set
 	 */
-	public String getPassword() {
-		return password;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
@@ -98,7 +90,12 @@ public class RegisterDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 }

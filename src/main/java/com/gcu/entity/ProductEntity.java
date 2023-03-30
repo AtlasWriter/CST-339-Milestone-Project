@@ -10,25 +10,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PRODUCTS")
 public class ProductEntity {
-	
+
+	@Column(name = "DESCRIPTION")
+	private String description;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(name = "NAME", nullable = false)
 	private String name;
-	
-	@Column(name = "DESCRIPTION")
-	private String description;
-	
-	@Column(name = "QUANTITY")
-	private String quantity;
-	
+
 	@Column(name = "PRICE")
 	private float price;
-	
+
+	@Column(name = "QUANTITY")
+	private String quantity;
+
 	public ProductEntity() {
-		
+
 	}
 
 	public ProductEntity(Long id, String name, String description, String quantity, float price) {
@@ -41,17 +41,17 @@ public class ProductEntity {
 	}
 
 	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public Long getId() {
 		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	/**
@@ -62,24 +62,10 @@ public class ProductEntity {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @return the price
 	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public float getPrice() {
+		return price;
 	}
 
 	/**
@@ -90,17 +76,24 @@ public class ProductEntity {
 	}
 
 	/**
-	 * @param quantity the quantity to set
+	 * @param description the description to set
 	 */
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	/**
-	 * @return the price
+	 * @param id the id to set
 	 */
-	public float getPrice() {
-		return price;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
@@ -109,6 +102,12 @@ public class ProductEntity {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	
-	
+
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+
 }

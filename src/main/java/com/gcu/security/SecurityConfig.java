@@ -27,67 +27,32 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	
+
 	private CustomUserDetailsService userDetailsService;
-	
-	
-	
+
 	@Autowired
 	public SecurityConfig(CustomUserDetailsService userDetailsService) {
 		super();
 		this.userDetailsService = userDetailsService;
 	}
-	
-	  @Bean
-	  AuthenticationSuccessHandler authenticationSuccessHandler() {
-	    return new CustomAuthenticationSuccessHandler();
-	  }
 
-	  @Bean
-	  AuthenticationFailureHandler authenticationFailureHandler() {
-	    return new CustomAuthenticationFailureHandler();
-	  }
-	
-	
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                	.antMatchers("/resources/**", "/static/**" , "/images/**", "/css/**", "/js/**").permitAll()
-                    .antMatchers("/api/auth/**").authenticated()
-                    .antMatchers("/login").permitAll()
-                    .antMatchers(HttpMethod.POST).hasRole("ADMIN")
-                    .antMatchers("welcome", "/user**").hasAnyRole("ADMIN", "USER")
-                    .antMatchers("/admin**" , "/").hasRole("ADMIN")
-                    
-                    .anyRequest()
-                    .authenticated()
-                .and()
-                .formLogin()
-                	.loginPage("/login")
-                	.usernameParameter("username")
-                	.passwordParameter("password")
-                	.loginProcessingUrl("/process-login")
-                	.failureUrl("/login?error=true")
-                	.successHandler(authenticationSuccessHandler())
-                	.failureHandler(authenticationFailureHandler())
-                	.defaultSuccessUrl("/welcome")
-				.and()
-				.logout()
-					.logoutSuccessUrl("/login?logout=true")
-					.invalidateHttpSession(true)
-					.deleteCookies("JSESSIONID")
-					.permitAll()
-				.and()
-				.httpBasic();
-		
-		return http.build();
-		
+	AuthenticationFailureHandler authenticationFailureHandler() {
+		return new CustomAuthenticationFailureHandler();
 	}
-	
-	
+
+	@Bean
+	public AuthenticationManager authenticationManger(AuthenticationConfiguration authenticationConfiguration)
+			throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
+
+	}
+
+	@Bean
+	AuthenticationSuccessHandler authenticationSuccessHandler() {
+		return new CustomAuthenticationSuccessHandler();
+	}
+
 //	@Bean
 //	public UserDetailsService users() {
 //		UserDetails admin = User.builder()
@@ -103,19 +68,29 @@ public class SecurityConfig {
 //				.build();
 //		return new InMemoryUserDetailsManager(admin, user);
 //	}
-	
+
 	@Bean
-	public AuthenticationManager authenticationManger(
-			AuthenticationConfiguration authenticationConfiguration) throws Exception {
-		return authenticationConfiguration.getAuthenticationManager();
-		
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+		http.csrf().disable().authorizeRequests()
+				.antMatchers("/resources/**", "/static/**", "/images/**", "/css/**", "/js/**").permitAll()
+				.antMatchers("/api/auth/**").authenticated().antMatchers("/login").permitAll()
+				.antMatchers(HttpMethod.POST).hasRole("ADMIN").antMatchers("welcome", "/user**")
+				.hasAnyRole("ADMIN", "USER").antMatchers("/admin**", "/").hasRole("ADMIN")
+
+				.anyRequest().authenticated().and().formLogin().loginPage("/login").usernameParameter("username")
+				.passwordParameter("password").loginProcessingUrl("/process-login").failureUrl("/login?error=true")
+				.successHandler(authenticationSuccessHandler()).failureHandler(authenticationFailureHandler())
+				.defaultSuccessUrl("/welcome").and().logout().logoutSuccessUrl("/login?logout=true")
+				.invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll().and().httpBasic();
+
+		return http.build();
+
 	}
-			
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-	
 
 }

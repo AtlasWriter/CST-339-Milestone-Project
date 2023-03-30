@@ -19,9 +19,5 @@ public class Milestone_6 {
 
 	@Autowired
 	private UserRepository studentRepository;
-	
 
-		
-	}
-
-
+}

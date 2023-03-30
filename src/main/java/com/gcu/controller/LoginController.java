@@ -19,41 +19,36 @@ import org.springframework.security.core.userdetails.User;
 @Controller
 @RequestMapping("/")
 public class LoginController {
-	
+
 	private ProductService productService;
 
-	
-	
 	public LoginController(ProductService productService) {
 		super();
 		this.productService = productService;
 	}
+
 	@GetMapping("login")
-	public String displayLogin(Model model)
-	{
+	public String displayLogin(Model model) {
 		model.addAttribute("title", "Login Form");
-		model.addAttribute("loginDto",new LoginDto());
+		model.addAttribute("loginDto", new LoginDto());
 		return "login";
 	}
+
 	@PostMapping("/dologin")
 	public String doLogin(@Valid UserLoginModel loginDto, Model model) {
-		
-		model.addAttribute("userLoginModel",loginDto);
+
+		model.addAttribute("userLoginModel", loginDto);
 		model.addAttribute("title", "You Are Logged on, Select from the menue");
 		return "welcome";
 	}
+
 	@GetMapping("/welcome")
 	public String success(Authentication authentication, Model model) {
 		model.addAttribute("Signed in Succesfull", "Welcome");
 		model.addAttribute("products", productService.getAllStudents());
-		 User u = (User) authentication.getPrincipal();
-		 model.addAttribute("cu", u);
+		User u = (User) authentication.getPrincipal();
+		model.addAttribute("cu", u);
 		return "welcome";
 	}
-	
-	
-	
+
 }
-
-
-

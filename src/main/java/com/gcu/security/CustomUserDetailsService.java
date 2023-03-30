@@ -17,25 +17,25 @@ import com.gcu.entity.UserEntity;
 import com.gcu.repository.UserRepository;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+public class CustomUserDetailsService implements UserDetailsService {
 
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	public CustomUserDetailsService(UserRepository userRepository) {
 		super();
 		this.userRepository = userRepository;
 	}
 
-
 	@Override
-	 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity user = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Username not found"));
-        return new User(user.getUsername(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserEntity user = userRepository.findByUsername(username)
+				.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
+		return new User(user.getUsername(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));
 	}
-	
-	 private Collection<GrantedAuthority> mapRolesToAuthorities(List<Role> roles) {
-	        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+
+	private Collection<GrantedAuthority> mapRolesToAuthorities(List<Role> roles) {
+		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 	}
 
 }
